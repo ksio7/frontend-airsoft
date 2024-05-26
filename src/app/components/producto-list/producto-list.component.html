@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="#">My Website</a>
+        <a class="navbar-brand" href="#">Airsoft Malaga</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -10,8 +10,16 @@
                 <li class="nav-item active">
                     <a class="nav-link" routerLink="/index">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/categoria">Categories</a>
+                <li class="nav-item dropdown" id="categoriesDropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                        <a class="dropdown-item" routerLink="/categoria/Armas">Armas</a>
+                        <a class="dropdown-item" routerLink="/categoria/Municion y Recarga">Municion y Recarga</a>
+                        <a class="dropdown-item" routerLink="/categoria/Accesorios">Accesorios</a>
+                        <a class="dropdown-item" routerLink="/categoria/Internos">Internos</a>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/products">Products</a>
@@ -28,16 +36,17 @@
 </nav>
 
 <div class="container mt-5">
-    <div *ngIf="productos.length > 0; else noProducts">
+    <div *ngIf="paginatedProducts.length > 0; else noProducts">
         <h2>All Products</h2>
         <mat-grid-list cols="3" gutterSize="16px">
-            <mat-grid-tile *ngFor="let product of productos" [colspan]="1" [rowspan]="1">
+            <mat-grid-tile *ngFor="let product of paginatedProducts" [colspan]="1" [rowspan]="1">
                 <mat-card>
                     <mat-card-header>
                         <mat-card-title>{{ product.nombre }}</mat-card-title>
                         <mat-card-subtitle>Manufacturer: {{ product.fabricante.nombre }}</mat-card-subtitle>
                     </mat-card-header>
-                    <img mat-card-image src="product.imagenes[0]?.imagenUrl" alt="{{ product.nombre }}">
+                    <img  class="product-image" mat-card-image [src]="'../../../assets/images/' + formatFileName(product.nombre) + '.webp'"
+                        alt="{{ product.nombre }}">
                     <mat-card-content>
                         <p><strong>Description:</strong> {{ product.descripcion }}</p>
                         <p><strong>Price:</strong> {{ product.precio | currency }}</p>
@@ -48,6 +57,9 @@
                 </mat-card>
             </mat-grid-tile>
         </mat-grid-list>
+        <mat-paginator [length]="productos.length" [pageSize]="pageSize" [pageSizeOptions]="[6, 9, 12]"
+            (page)="handlePageEvent($event)">
+        </mat-paginator>
     </div>
     <ng-template #noProducts>
         <p>No products found.</p>
@@ -56,6 +68,6 @@
 
 <footer class="footer mt-auto py-3 bg-dark text-white">
     <div class="container text-center">
-        <span class="text-muted">© 2024 My Website</span>
+        <span class="text-muted">© 2024 Airsoft Malaga</span>
     </div>
 </footer>

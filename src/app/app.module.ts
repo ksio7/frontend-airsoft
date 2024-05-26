@@ -21,6 +21,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { ImageService } from './services/image.service';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SharedService } from './services/shared.service';
 
 
 const appRoutes: Routes = [
@@ -42,7 +45,8 @@ const appRoutes: Routes = [
     ProductosByCategoriaComponent,
     ProductoListComponent,
     FabricanteListComponent,
-    IndexComponent
+    IndexComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +64,7 @@ const appRoutes: Routes = [
     MatPaginatorModule,
 
   ],
-  providers: [AuthService],
+  providers: [AuthService,ImageService,SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
