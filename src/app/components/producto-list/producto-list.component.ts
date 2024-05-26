@@ -1,6 +1,6 @@
-// src/app/components/producto-list/producto-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../../services/producto.service';
+import { ProductCacheService } from '../../services/product-cache.service';
 import { Producto } from '../../models/producto.model';
 
 @Component({
@@ -12,14 +12,15 @@ export class ProductoListComponent implements OnInit {
 
   productos: Producto[] = [];
 
-  constructor(private productoService: ProductoService) { }
+  constructor(private productoService: ProductoService, private productCacheService: ProductCacheService) { }
 
   ngOnInit(): void {
     this.productoService.getProductos().subscribe(data => {
-      console.log('Productos:', data); // Log the data to the console
       this.productos = data;
+      this.productCacheService.setProducts(data);
+      console.log('Fetched products:', data); // Add this line for debugging
     }, error => {
-      console.error('Error fetching productos:', error); // Log errors if any
+      console.error('Error fetching products:', error);
     });
   }
 }

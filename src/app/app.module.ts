@@ -1,35 +1,48 @@
-// src/app/app.module.ts
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { ProductoListComponent } from './components/producto-list/producto-list.component';
 import { FabricanteListComponent } from './components/fabricante-list/fabricante-list.component';
-import { ProductoService } from './services/producto.service';
-import { FabricanteService } from './services/fabricante.service';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { ProductoListComponent } from './components/producto-list/producto-list.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthService } from './services/auth.service';
+import { CategoriaListComponent } from './components/categoria-list/categoria-list.component';
+import { ProductosByCategoriaComponent } from './components/productos-by-categoria/productos-by-categoria.component';
+import { IndexComponent } from './components/index/index.component';
 
+import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatGridListModule } from '@angular/material/grid-list';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 const appRoutes: Routes = [
-  { path: 'productos', component: ProductoListComponent },
   { path: 'fabricantes', component: FabricanteListComponent },
-  { path: '', redirectTo: '/productos', pathMatch: 'full' } // Default route
+  { path: 'productos', component: ProductoListComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'categoria', component: CategoriaListComponent },
+  { path: 'categoria/:nombreCategoria', component: ProductosByCategoriaComponent },
+  { path: 'index', component: IndexComponent },
+  { path: '', redirectTo: '/index', pathMatch: 'full' }, // Default route
+  { path: '**', redirectTo: '/index' } // Fallback route for undefined paths
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
+    CategoriaListComponent,
+    ProductosByCategoriaComponent,
     ProductoListComponent,
     FabricanteListComponent,
-    // Add other components here
+    IndexComponent
   ],
   imports: [
     BrowserModule,
@@ -38,12 +51,16 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
+    MatListModule,
     MatCardModule,
+    MatGridListModule,
     MatButtonModule,
+    NgbModule,
     MatIconModule,
-    MatGridListModule
+    MatPaginatorModule,
+
   ],
-  providers: [ProductoService, FabricanteService, provideAnimationsAsync()],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
