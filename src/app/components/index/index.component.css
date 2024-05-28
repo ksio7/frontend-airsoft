@@ -1,0 +1,130 @@
+<<<<<<< Updated upstream
+=======
+.navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    /* adjust drop down menu from top */
+}
+
+>>>>>>> Stashed changes
+/* Navbar */
+.navbar {
+    margin-bottom: 20px;
+}
+
+<<<<<<< Updated upstream
+=======
+/* Grid */
+.mat-grid-tile {
+    display: flex;
+    justify-content: center;
+}
+
+.mat-card {
+    width: 100%;
+}
+
+.product-image {
+    width: 150px;
+    /* Set a fixed width */
+    height: 150px;
+    /* Set a fixed height */
+    object-fit: contain;
+    /* Ensure the image maintains its aspect ratio */
+    margin: 0 auto;
+    /* Center the image horizontally */
+    display: block;
+    /* Ensure the image is treated as a block element */
+}
+
+.mat-card-image {
+    width: 50px;
+    /* Set a fixed width */
+    height: 50px;
+    /* Set a fixed height */
+    object-fit: contain;
+    /* Ensure the image maintains its aspect ratio */
+    margin: 0 auto;
+    /* Center the image horizontally */
+    display: block;
+    /* Ensure the image is treated as a block element */
+}/* Navbar */
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+>>>>>>> Stashed changes
+/* Header */
+.header {
+    margin-bottom: 40px;
+}
+
+.carousel-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carousel-image {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Featured section */
+.featured h2 {
+    margin-bottom: 30px;
+}
+
+.featured .card {
+    margin-bottom: 30px;
+}
+
+/* About section */
+.about h2 {
+    margin-bottom: 20px;
+}
+
+.about p {
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+/* Contact section */
+.contact h2 {
+    margin-bottom: 20px;
+}
+
+.contact form .form-group {
+    margin-bottom: 15px;
+}
+
+/* Footer */
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.text-center {
+    text-align: center;
+<<<<<<< Updated upstream
+=======
+}
+
+.navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    /* adjust drop down menu from top */
+}
+
+/* Navbar */
+.navbar {
+    margin-bottom: 20px;
+>>>>>>> Stashed changes
+}

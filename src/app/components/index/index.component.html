@@ -1,0 +1,110 @@
+<<<<<<< Updated upstream
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">My Website</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/index">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/categoria">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/productos">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/fabricantes">Fabricantes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+=======
+>>>>>>> Stashed changes
+
+<header class="header">
+    <div class="carousel-container">
+        <ngb-carousel>
+            <ng-template ngbSlide *ngFor="let image of images">
+                <img [src]="image.src" [alt]="image.alt" class="d-block w-100 carousel-image">
+            </ng-template>
+        </ngb-carousel>
+    </div>
+</header>
+
+<div class="container mt-5">
+    <section class="text-center">
+<<<<<<< Updated upstream
+        <h2>Welcome to My Website</h2>
+        <p class="lead">Your one-stop destination for all your needs.</p>
+=======
+        <h2>Welcome to Airsoft Malaga</h2>
+        <p class="lead">Encuentra todo lo que necesitas aqui!</p>
+>>>>>>> Stashed changes
+    </section>
+
+    <section class="featured mt-5">
+        <h2 class="text-center">Featured Products</h2>
+        <div class="row">
+            <div class="col-md-4" *ngFor="let product of [1,2,3]">
+                <div class="card mb-4 shadow-sm">
+                    <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Product {{product}}</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about mt-5 text-center">
+        <h2>About Us</h2>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi
+            semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales
+            vehicula....</p>
+    </section>
+
+    <section class="contact mt-5">
+        <h2 class="text-center">Contact Us</h2>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputName">Name</label>
+                    <input type="text" class="form-control" id="inputName" placeholder="Name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputMessage">Message</label>
+                <textarea class="form-control" id="inputMessage" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </section>
+</div>
+
+<footer class="footer mt-auto py-3 bg-dark text-white">
+    <div class="container text-center">
+        <span class="text-muted">© 2024 My Website</span>
+    </div>
+</footer>

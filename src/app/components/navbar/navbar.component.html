@@ -1,0 +1,111 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+<<<<<<< Updated upstream
+        <a class="navbar-brand" href="#">My Website</a>
+=======
+        <a class="navbar-brand" href="#">Airsoft Malaga</a>
+>>>>>>> Stashed changes
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+<<<<<<< Updated upstream
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/index">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                        <a class="dropdown-item" *ngFor="let category of categories"
+                            [routerLink]="['/categoria', category]">{{ category }}</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/products">Products</a>
+=======
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/index">Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item dropdown" id="categoriesDropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true"
+                        aria-expanded="false">
+                        Armas
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                        <a class="dropdown-item" routerLink="/subcategoria/fusiles">Fusiles</a>
+                        <a class="dropdown-item" routerLink="/subcategoria/subfusiles">Subfusiles</a>
+                        <a class="dropdown-item" routerLink="/subcategoria/pistolas">Pistolas</a>
+                        <a class="dropdown-item" routerLink="/subcategoria/francotiradores">Francotiradores</a>
+                        <a class="dropdown-item" routerLink="/subcategoria/escopetas">Escopetas</a>
+
+                    </div>
+                </li>
+                <li class="nav-item dropdown" id="categoriesDropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true"
+                        aria-expanded="false">
+                        Municion y Recarga
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                        <a class="dropdown-item" routerLink="/subcategoria/bolas de airsoft">Bolas</a>
+                        <a class="dropdown-item" routerLink="/subcategoria/baterias y cargadores de bateria">Baterias y
+                            Cargadores</a>
+                        <a class="dropdown-item" routerLink="/subcategoria/cargadores">Cargadores</a>
+
+                    </div>
+                </li>
+                <li class="nav-item dropdown" id="categoriesDropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true"
+                        aria-expanded="false">
+                        Accesorios
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                        <a class="dropdown-item" routerLink="/subcategoria/gas, co2 y mantenimiento">Gas,Co2 y
+                            Mantenimiento</a>
+                        <a class="dropdown-item" routerLink="/subcategoria/granadas y lanzagranadas">Granadas y
+                            Lanzagranadas</a>
+                        <a class="dropdown-item" routerLink="/subcategoria/miras y red dot">Miras y Red Dot</a>
+                        <a class="dropdown-item" routerLink="/subcategoria/correas y landyards">Correas y Landyards</a>
+                        <a class="dropdown-item" routerLink="/subcategoria/monturas y railes">Monturas y Railes</a>
+                        <a class="dropdown-item" routerLink="/subcategoria/linternas y laseres">Linternas y laseres</a>
+                        <a class="dropdown-item" routerLink="/subcategoria/camaras y gomas Hop-up">Camaras y Gomas
+                            Hop-Up</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" id="categoriesDropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true"
+                        aria-expanded="false">
+                        Internos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                        <a class="dropdown-item" routerLink="/categoria/internos">Internos</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/productos">Productos</a>
+>>>>>>> Stashed changes
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/fabricantes">Fabricantes</a>
+                </li>
+<<<<<<< Updated upstream
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login">Login</a>
+                </li>
+=======
+                
+                <li class="nav-item" *ngIf="!isLoggedIn">
+                    <a class="nav-link" routerLink="/login">Login</a>
+                </li>
+                <li class="nav-item" *ngIf="isLoggedIn">
+                    <a class="nav-link" (click)="logout()">Logout</a>
+                </li>
+>>>>>>> Stashed changes
+            </ul>
+        </div>
+    </div>
+</nav>

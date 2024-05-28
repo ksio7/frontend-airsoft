@@ -16,12 +16,56 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+<<<<<<< Updated upstream
 import { MatGridListModule } from '@angular/material/grid-list';
+=======
+<<<<<<< Updated upstream
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { ImageService } from './services/image.service';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SharedService } from './services/shared.service';
+
+>>>>>>> Stashed changes
 
 const appRoutes: Routes = [
   { path: 'productos', component: ProductoListComponent },
+<<<<<<< Updated upstream
   { path: 'fabricantes', component: FabricanteListComponent },
   { path: '', redirectTo: '/productos', pathMatch: 'full' } // Default route
+=======
+  { path: 'login', component: LoginComponent },
+  { path: 'categoria', component: CategoriaListComponent },
+  { path: 'categoria/:nombreCategoria', component: ProductosByCategoriaComponent },
+  { path: 'index', component: IndexComponent },
+  { path: '', redirectTo: '/index', pathMatch: 'full' }, // Default route
+  { path: '**', redirectTo: '/index' } // Fallback route for undefined paths
+=======
+<<<<<<< Updated upstream
+import { MatGridListModule } from '@angular/material/grid-list';
+=======
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { ImageService } from './services/image.service';
+import { SharedService } from './services/shared.service';
+import { SubcategoriaComponent } from './components/subcategoria/subcategoria.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
+>>>>>>> Stashed changes
+
+const appRoutes: Routes = [
+  { path: 'productos', component: ProductoListComponent },
+<<<<<<< Updated upstream
+  { path: 'fabricantes', component: FabricanteListComponent },
+  { path: '', redirectTo: '/productos', pathMatch: 'full' } // Default route
+=======
+  { path: 'login', component: LoginComponent },
+  { path: 'categoria', component: CategoriaListComponent },
+  { path: 'subcategoria/:nombreSubcategoria', component: SubcategoriaComponent },
+  { path: 'index', component: IndexComponent },
+  { path: '', redirectTo: '/index', pathMatch: 'full' }, // Default route
+  { path: '**', redirectTo: '/index' } // Fallback route for undefined paths
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 ];
 
 @NgModule({
@@ -29,7 +73,22 @@ const appRoutes: Routes = [
     AppComponent,
     ProductoListComponent,
     FabricanteListComponent,
+<<<<<<< Updated upstream
     // Add other components here
+=======
+<<<<<<< Updated upstream
+    IndexComponent,
+    NavbarComponent
+=======
+<<<<<<< Updated upstream
+    // Add other components here
+=======
+    IndexComponent,
+    SubcategoriaComponent,
+    NavbarComponent
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

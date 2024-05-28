@@ -1,3 +1,45 @@
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Airsoft Malaga</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/index">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown" id="categoriesDropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                        <a class="dropdown-item" routerLink="/categoria/Armas">Armas</a>
+                        <a class="dropdown-item" routerLink="/categoria/Municion y Recarga">Municion y Recarga</a>
+                        <a class="dropdown-item" routerLink="/categoria/Accesorios">Accesorios</a>
+                        <a class="dropdown-item" routerLink="/categoria/Internos">Internos</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/products">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/fabricantes">Fabricantes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
 <!-- src/app/components/producto-list/producto-list.component.html -->
 <!-- src/app/components/producto-list/producto-list.component.html -->
 <div class="container">
@@ -25,4 +67,52 @@
             </mat-card>
         </mat-grid-tile>
     </mat-grid-list>
+<<<<<<< Updated upstream
 </div>
+=======
+</div>
+=======
+>>>>>>> Stashed changes
+
+<div class="container mt-5">
+    <div *ngIf="paginatedProducts.length > 0; else noProducts">
+        <h2>All Products</h2>
+        <mat-grid-list cols="3" gutterSize="16px">
+            <mat-grid-tile *ngFor="let product of paginatedProducts" [colspan]="1" [rowspan]="1">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>{{ product.nombre }}</mat-card-title>
+                        <mat-card-subtitle>Manufacturer: {{ product.fabricante.nombre }}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img  class="product-image" mat-card-image [src]="'../../../assets/images/' + formatFileName(product.nombre) + '.webp'"
+                        alt="{{ product.nombre }}">
+                    <mat-card-content>
+                        <p><strong>Description:</strong> {{ product.descripcion }}</p>
+                        <p><strong>Price:</strong> {{ product.precio | currency }}</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button color="primary">Add to Cart</button>
+                    </mat-card-actions>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-paginator [length]="productos.length" [pageSize]="pageSize" [pageSizeOptions]="[6, 9, 12]"
+            (page)="handlePageEvent($event)">
+        </mat-paginator>
+    </div>
+    <ng-template #noProducts>
+        <p>No products found.</p>
+    </ng-template>
+</div>
+
+<footer class="footer mt-auto py-3 bg-dark text-white">
+    <div class="container text-center">
+        <span class="text-muted">© 2024 Airsoft Malaga</span>
+    </div>
+<<<<<<< Updated upstream
+</footer>
+=======
+</footer>
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
