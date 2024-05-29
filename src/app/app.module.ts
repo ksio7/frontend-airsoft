@@ -24,7 +24,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ImageService } from './services/image.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SharedService } from './services/shared.service';
-
+import { SubcategoriaComponent } from './components/subcategoria/subcategoria.component';
+import { TruncatePipe } from './truncate.pipe';
 
 const appRoutes: Routes = [
   { path: 'fabricantes', component: FabricanteListComponent },
@@ -32,10 +33,12 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'categoria', component: CategoriaListComponent },
   { path: 'categoria/:nombreCategoria', component: ProductosByCategoriaComponent },
+  { path: 'subcategoria/:nombreSubcategoria', component: SubcategoriaComponent },
   { path: 'index', component: IndexComponent },
   { path: '', redirectTo: '/index', pathMatch: 'full' }, // Default route
   { path: '**', redirectTo: '/index' } // Fallback route for undefined paths
 ];
+
 
 @NgModule({
   declarations: [
@@ -46,7 +49,9 @@ const appRoutes: Routes = [
     ProductoListComponent,
     FabricanteListComponent,
     IndexComponent,
-    NavbarComponent
+    NavbarComponent,
+    SubcategoriaComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
@@ -62,9 +67,8 @@ const appRoutes: Routes = [
     NgbModule,
     MatIconModule,
     MatPaginatorModule,
-
   ],
-  providers: [AuthService,ImageService,SharedService],
+  providers: [AuthService, ImageService, SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

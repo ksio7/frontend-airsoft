@@ -1,16 +1,8 @@
 <div class="container mt-5">
-    <h2>All Products</h2>
-    <div class="form-group">
-        <label for="subcategorySelect">Filter by Subcategory</label>
-        <select id="subcategorySelect" class="form-control" [(ngModel)]="selectedSubcategory"
-            (change)="onSubcategoryChange()">
-            <option value="">All Subcategories</option>
-            <option *ngFor="let subcategory of subcategories" [value]="subcategory">{{ subcategory }}</option>
-        </select>
-    </div>
-    <div *ngIf="paginatedProducts.length > 0; else noProducts">
+    <h2>{{ subcategory }} Products</h2>
+    <div *ngIf="productos.length > 0; else noProducts">
         <mat-grid-list cols="3" gutterSize="16px">
-            <mat-grid-tile *ngFor="let product of paginatedProducts" [colspan]="1" [rowspan]="1">
+            <mat-grid-tile *ngFor="let product of productos" [colspan]="1" [rowspan]="1">
                 <mat-card>
                     <mat-card-header>
                         <mat-card-title>{{ product.nombre }}</mat-card-title>
@@ -29,9 +21,6 @@
                 </mat-card>
             </mat-grid-tile>
         </mat-grid-list>
-        <mat-paginator [length]="filteredProducts.length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 20]"
-            (page)="handlePageEvent($event)">
-        </mat-paginator>
     </div>
     <ng-template #noProducts>
         <p>No products found.</p>

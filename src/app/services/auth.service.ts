@@ -1,24 +1,32 @@
+// src/app/services/auth.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8080/api/usuarios';
+  private isLoggedInSubject = new BehaviorSubject<boolean>(false);
+  private usernameSubject = new BehaviorSubject<string | null>(null);
 
-  constructor(private http: HttpClient) {}
+  isLoggedIn$: Observable<boolean> = this.isLoggedInSubject.asObservable();
+  getUsername$: Observable<string | null> = this.usernameSubject.asObservable();
 
-  login(credentials: { direccionEmail: string; password: string }): Observable<any> {
-    return this.http.put(`${this.apiUrl}/login`, credentials).pipe(
-      catchError(this.handleError)
-    );
+  login(credentials: { username: string, password: string }): Observable<any> {
+    // Simulate an API call
+    return new Observable(observer => {
+      // Fake a successful login response
+      setTimeout(() => {
+        this.isLoggedInSubject.next(true);
+        this.usernameSubject.next(credentials.username);
+        observer.next({ success: true });
+        observer.complete();
+      }, 1000);
+    });
   }
 
-  private handleError(error: HttpErrorResponse) {
-    console.error('An error occurred:', error.message);
-    return throwError('Something went wrong; please try again later.');
+  logout(): void {
+    this.isLoggedInSubject.next(false);
+    this.usernameSubject.next(null);
   }
 }
