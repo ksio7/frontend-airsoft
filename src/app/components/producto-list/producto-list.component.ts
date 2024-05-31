@@ -18,7 +18,7 @@ export class ProductoListComponent implements OnInit {
   categories: string[] = []; // Array to store unique categories
   subcategories: string[] = []; // Array to store unique subcategories
   selectedSubcategory: string = ''; // Variable to store the selected subcategory
-  pageSize = 5;
+  pageSize = 6;
   currentPage = 0;
 
   constructor(

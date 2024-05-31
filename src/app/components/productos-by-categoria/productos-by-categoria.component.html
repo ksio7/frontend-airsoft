@@ -1,5 +1,5 @@
 <div *ngIf="productos.length > 0; else noProducts">
-    <h2>Products in {{ nombreCategoria }}</h2>
+    <h2>Productos en {{ nombreCategoria }}</h2>
     <mat-grid-list cols="3" gutterSize="16px">
         <mat-grid-tile *ngFor="let product of productos" [colspan]="1" [rowspan]="1">
             <mat-card>

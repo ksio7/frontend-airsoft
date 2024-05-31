@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-index',
@@ -13,9 +14,12 @@ export class IndexComponent implements OnInit {
     {src: 'assets/images/Image 3.webp', alt: 'Image 3'}
   ];
 
-  constructor() { }
+  products: any[] = [];
+
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
+    this.products = this.productService.getProducts();
   }
-
 }
+

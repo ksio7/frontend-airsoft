@@ -1,17 +1,17 @@
 <div class="container mt-5">
-    <h2>All Products</h2>
+    <h2>Todos los productos:</h2>
     <div class="form-group">
-        <label for="subcategorySelect">Filter by Subcategory</label>
+        <label for="subcategorySelect">Filtrar por Subcategoria</label>
         <select id="subcategorySelect" class="form-control" [(ngModel)]="selectedSubcategory"
             (change)="onSubcategoryChange()">
-            <option value="">All Subcategories</option>
+            <option value="">Todas Subcategorias</option>
             <option *ngFor="let subcategory of subcategories" [value]="subcategory">{{ subcategory }}</option>
         </select>
     </div>
     <div *ngIf="paginatedProducts.length > 0; else noProducts">
-        <mat-grid-list cols="3" gutterSize="16px">
-            <mat-grid-tile *ngFor="let product of paginatedProducts" [colspan]="1" [rowspan]="1">
-                <mat-card>
+        <div class="row">
+            <div class="col-md-4" *ngFor="let product of paginatedProducts">
+                <mat-card class="product-card">
                     <mat-card-header>
                         <mat-card-title>{{ product.nombre }}</mat-card-title>
                         <mat-card-subtitle>Manufacturer: {{ product.fabricante.nombre }}</mat-card-subtitle>
@@ -27,9 +27,9 @@
                         <button mat-button color="primary">Add to Cart</button>
                     </mat-card-actions>
                 </mat-card>
-            </mat-grid-tile>
-        </mat-grid-list>
-        <mat-paginator [length]="filteredProducts.length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 20]"
+            </div>
+        </div>
+        <mat-paginator [length]="filteredProducts.length" [pageSize]="pageSize" [pageSizeOptions]="[6, 9, 12]"
             (page)="handlePageEvent($event)">
         </mat-paginator>
     </div>

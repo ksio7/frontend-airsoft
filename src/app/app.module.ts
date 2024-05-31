@@ -26,6 +26,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SharedService } from './services/shared.service';
 import { SubcategoriaComponent } from './components/subcategoria/subcategoria.component';
 import { TruncatePipe } from './truncate.pipe';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 const appRoutes: Routes = [
   { path: 'fabricantes', component: FabricanteListComponent },
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
   { path: 'subcategoria/:nombreSubcategoria', component: SubcategoriaComponent },
   { path: 'index', component: IndexComponent },
   { path: '', redirectTo: '/index', pathMatch: 'full' }, // Default route
-  { path: '**', redirectTo: '/index' } // Fallback route for undefined paths
+  { path: '**', redirectTo: '/index' }, // Fallback route for undefined paths
+  { path: 'signup', component: SignUpComponent }
 ];
 
 
@@ -51,7 +53,8 @@ const appRoutes: Routes = [
     IndexComponent,
     NavbarComponent,
     SubcategoriaComponent,
-    TruncatePipe
+    TruncatePipe,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
